@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Store Plus - الاشتراكات الرقمية وإنشاء المواقع</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20aria-label%3D%22AI%20Store%20Plus%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22fv-bg%22%20x1%3D%226%22%20y1%3D%2258%22%20x2%3D%2258%22%20y2%3D%226%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%234f46e5%22/%3E%3Cstop%20offset%3D%220.55%22%20stop-color%3D%22%233b82f6%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322d3ee%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22fv-star%22%20x1%3D%220%22%20y1%3D%2224%22%20x2%3D%2224%22%20y2%3D%220%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%234f46e5%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%239333ea%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2260%22%20height%3D%2260%22%20rx%3D%2216%22%20fill%3D%22url%28%23fv-bg%29%22/%3E%0A%20%20%3Cpath%20d%3D%22M24%2027v-3.5a8%208%200%200%201%2016%200V27%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.5%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M16.5%2027h31l-2.3%2021.5a4%204%200%200%201-4%203.5H22.8a4%204%200%200%201-4-3.5Z%22%20fill%3D%22%23fff%22/%3E%0A%20%20%3Cpath%20transform%3D%22translate%2824.5%2031.5%29%20scale%280.625%29%22%20d%3D%22M12%200C12.6%206.5%2017.5%2011.4%2024%2012C17.5%2012.6%2012.6%2017.5%2012%2024C11.4%2017.5%206.5%2012.6%200%2012C6.5%2011.4%2011.4%206.5%2012%200Z%22%20fill%3D%22url%28%23fv-star%29%22/%3E%0A%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2214%22%20r%3D%229%22%20fill%3D%22%23f59e0b%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.5%22/%3E%0A%20%20%3Cpath%20d%3D%22M50%2010v8M46%2014h8%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22/%3E%0A%3C/svg%3E">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#f8fafc',
+                        cardBg: '#ffffff',
+                        accent: '#6366f1',
+                        whatsapp: '#25D366',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.88);
+        }
+        .card-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-glow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(99, 102, 241, 0.25);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+        .whatsapp-float {
+            animation: pulse-slow 2.5s infinite;
+        }
+    </style>
+</head>
+<body id="top" class="min-h-screen flex flex-col justify-between bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 selection:bg-indigo-500 selection:text-white">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 hidden bg-white dark:bg-slate-800 border border-indigo-500 text-slate-900 dark:text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+        <span id="toast-msg" class="font-semibold text-sm">تمت العملية بنجاح!</span>
+    </div>
+
+    <!-- Seller Quick Setup Banner (Hidden by default for clean customer view, toggleable from footer or gear icon) -->
+    <div id="seller-top-banner" class="hidden bg-gradient-to-l from-indigo-100 via-purple-100 to-slate-100 dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border-b border-indigo-500/30 px-4 py-2 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
+                <span class="bg-indigo-600 text-white px-2 py-0.5 rounded-md font-bold text-xs">لوحة التاجر مفعلة</span>
+                <span>اضبط رقم الواتساب الخاص بك، أسعار الاشتراكات، أو طريقة العرض من هنا!</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="openAdminModal()" class="bg-white dark:bg-slate-800 hover:bg-indigo-50 text-slate-900 dark:text-white border border-indigo-200 dark:border-indigo-700 px-3 py-1 rounded-lg font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-gear text-indigo-600 dark:text-indigo-400"></i>
+                    <span>إعدادات المتجر ورقم الواتساب</span>
+                </button>
+                <button onclick="openAdminModal()" class="bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-lg font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>تعديل بيانات وسعر الاشتراك</span>
+                </button>
+                <button onclick="toggleSellerBanner()" class="text-slate-500 hover:text-red-600 px-2 py-1 text-xs font-bold" title="إخفاء شريط التاجر">
+                    <i class="fa-solid fa-eye-slash"></i> إخفاء
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 dark:border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-3">
+            <!-- Brand Logo -->
+            <a href="#top" class="flex items-center gap-3 group shrink-0">
+                <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 drop-shadow-lg group-hover:rotate-6 transition" xmlns="http://www.w3.org/2000/svg" aria-label="AI Store Plus">
+                    <defs>
+                        <linearGradient id="hd-bg" x1="6" y1="58" x2="58" y2="6" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="0.55" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/>
+                        </linearGradient>
+                        <linearGradient id="hd-star" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#9333ea"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#hd-bg)"/>
+                    <path d="M24 27v-3.5a8 8 0 0 1 16 0V27" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M16.5 27h31l-2.3 21.5a4 4 0 0 1-4 3.5H22.8a4 4 0 0 1-4-3.5Z" fill="#fff"/>
+                    <path transform="translate(24.5 31.5) scale(0.625)" d="M12 0C12.6 6.5 17.5 11.4 24 12C17.5 12.6 12.6 17.5 12 24C11.4 17.5 6.5 12.6 0 12C6.5 11.4 11.4 6.5 12 0Z" fill="url(#hd-star)"/>
+                    <circle cx="50" cy="14" r="9" fill="#f59e0b" stroke="#fff" stroke-width="2.5"/>
+                    <path d="M50 10v8M46 14h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 id="store-name-display" class="text-lg sm:text-2xl font-black bg-clip-text text-transparent bg-gradient-to-l from-slate-900 via-indigo-700 to-cyan-600 dark:from-white dark:via-indigo-300 dark:to-cyan-400">AI Store Plus</h1>
+                    </div>
+                    <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        اشتراكات رقمية & برمجة وتصميم مواقع
+                    </p>
+                </div>
+            </a>
+
+            <!-- Quick Section Links (Desktop) -->
+            <nav class="hidden xl:flex items-center gap-1.5 bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 p-1.5 rounded-2xl">
+                <a href="#subscriptions-section" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-indigo-800 dark:text-indigo-200 bg-indigo-600/10 border border-indigo-500/30 hover:bg-indigo-600 hover:text-white transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bolt text-amber-500"></i>
+                    <span>الاشتراكات الرقمية</span>
+                </a>
+                <a href="#webdev-section" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-code text-cyan-600"></i>
+                    <span>باقات المواقع</span>
+                </a>
+                <a href="#custom-web-form" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-purple-600"></i>
+                    <span>طلب موقع مخصص</span>
+                </a>
+                <a href="#reviews-section" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <span>آراء العملاء</span>
+                </a>
+                <a href="#faq-section" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-question text-emerald-600"></i>
+                    <span>الأسئلة الشائعة</span>
+                </a>
+            </nav>
+
+            <!-- Search & Actions -->
+            <div class="flex items-center gap-2 sm:gap-2.5">
+                <!-- Desktop Search Input -->
+                <div class="hidden md:flex items-center relative">
+                    <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs absolute right-3.5 pointer-events-none"></i>
+                    <input type="text" id="search-input" oninput="filterProducts(false)" placeholder="ابحث عن اشتراك..." class="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pr-9 pl-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500 w-44 lg:w-52 transition">
+                </div>
+
+                <!-- Dark Mode Button -->
+                <button onclick="toggleDarkMode()" aria-label="تبديل الوضع الليلي" class="bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-amber-400 w-10 h-10 rounded-xl flex items-center justify-center transition">
+                    <i id="theme-icon" class="fa-solid fa-moon text-sm"></i>
+                </button>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCartModal()" class="relative bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white px-3.5 py-2 rounded-xl flex items-center gap-2 transition">
+                    <i class="fa-solid fa-cart-shopping text-indigo-600 dark:text-indigo-400"></i>
+                    <span class="hidden sm:inline font-bold text-xs sm:text-sm">السلة</span>
+                    <span id="cart-count" class="bg-indigo-600 text-white text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Quick Nav & Search -->
+        <div class="xl:hidden px-4 pb-3 space-y-2">
+            <div class="flex items-center gap-2">
+                <a href="#subscriptions-section" class="flex-1 text-center py-2 rounded-xl text-xs font-bold bg-indigo-600/15 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300">
+                    <i class="fa-solid fa-bolt text-amber-500 ml-1"></i> الاشتراكات الرقمية
+                </a>
+                <a href="#webdev-section" class="flex-1 text-center py-2 rounded-xl text-xs font-bold bg-cyan-500/15 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300">
+                    <i class="fa-solid fa-laptop-code text-cyan-600 ml-1"></i> إنشاء المواقع
+                </a>
+                <a href="#faq-section" class="px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                    الأسئلة
+                </a>
+            </div>
+            <div class="md:hidden relative">
+                <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                <input type="text" id="search-input-mobile" oninput="filterProducts(true)" placeholder="ابحث عن جمناي، كلود ماكس، نتفليكس..." class="w-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pr-9 pl-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-10 sm:py-16 px-4 border-b border-slate-200/60 dark:border-slate-800/60">
+        <!-- Decorative Background Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-5">
+                <svg viewBox="0 0 64 64" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" aria-label="AI Store Plus">
+                    <defs>
+                        <linearGradient id="hr-bg" x1="6" y1="58" x2="58" y2="6" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="0.55" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/>
+                        </linearGradient>
+                        <linearGradient id="hr-star" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#9333ea"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#hr-bg)"/>
+                    <path d="M24 27v-3.5a8 8 0 0 1 16 0V27" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M16.5 27h31l-2.3 21.5a4 4 0 0 1-4 3.5H22.8a4 4 0 0 1-4-3.5Z" fill="#fff"/>
+                    <path transform="translate(24.5 31.5) scale(0.625)" d="M12 0C12.6 6.5 17.5 11.4 24 12C17.5 12.6 12.6 17.5 12 24C11.4 17.5 6.5 12.6 0 12C6.5 11.4 11.4 6.5 12 0Z" fill="url(#hr-star)"/>
+                    <circle cx="50" cy="14" r="9" fill="#f59e0b" stroke="#fff" stroke-width="2.5"/>
+                    <path d="M50 10v8M46 14h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span>مرحباً بك في AI Store Plus — وجهتك الأولى للخدمات الرقمية والتقنية</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white leading-tight mb-4">
+                اشتراكات الذكاء الاصطناعي والترفيه و<span class="text-transparent bg-clip-text bg-gradient-to-l from-cyan-600 via-indigo-600 to-emerald-600 dark:from-cyan-400 dark:via-indigo-400 dark:to-emerald-400">تصميم موقعك الاحترافي</span> في مكان واحد!
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base mb-8 leading-relaxed">
+                نوفر لك أقوى الاشتراكات البريميوم الأصلية بتفعيل فوري وضمان كامل المدة، بالإضافة إلى تصميم وبرمجة مواقع ومتاجر إلكترونية عصرية مربوطة بالواتساب لتنمية مشروعك.
+            </p>
+
+            <!-- Hero Main CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+                <a href="#subscriptions-section" class="bg-indigo-600 hover:bg-indigo-500 text-white font-black px-6 py-3.5 rounded-2xl shadow-lg shadow-indigo-600/30 flex items-center gap-2 transition text-sm sm:text-base">
+                    <i class="fa-solid fa-bolt text-amber-300"></i>
+                    <span>تصفح الاشتراكات الرقمية</span>
+                </a>
+                <a href="#webdev-section" class="bg-gradient-to-l from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black px-6 py-3.5 rounded-2xl shadow-lg shadow-cyan-600/25 flex items-center gap-2 transition text-sm sm:text-base">
+                    <i class="fa-solid fa-code"></i>
+                    <span>باقات تصميم وإنشاء المواقع</span>
+                </a>
+            </div>
+
+            <!-- Stats & Trust Bar -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8">
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-3.5 rounded-2xl">
+                    <div class="text-xl sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">+1,500</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-bold">اشتراك مفعل بنجاح</div>
+                </div>
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-3.5 rounded-2xl">
+                    <div class="text-xl sm:text-2xl font-black text-cyan-600 dark:text-cyan-400">100%</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-bold">ضمان ذهبي كامل المدة</div>
+                </div>
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-3.5 rounded-2xl">
+                    <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">دقائق</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-bold">سرعة التفعيل والتسليم</div>
+                </div>
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-3.5 rounded-2xl">
+                    <div class="text-xl sm:text-2xl font-black text-amber-500">24/7</div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 font-bold">دعم فني عبر واتساب</div>
+                </div>
+            </div>
+
+            <!-- Features Badges -->
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
+                <div class="flex items-center gap-2 bg-slate-100/80 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-bolt text-amber-500"></i>
+                    <span>تسليم وتفعيل فوري</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-100/80 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-laptop-code text-cyan-600"></i>
+                    <span>برمجة مواقع سريعة ومتجاوبة</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-100/80 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                    <span>ضمان ذهبي ودعم فني</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-100/80 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-4 py-2 rounded-xl">
+                    <i class="fa-solid fa-wallet text-indigo-600"></i>
+                    <span>فودافون كاش & InstaPay</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Store Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full space-y-20">
+        
+        <!-- SECTION 1: DIGITAL SUBSCRIPTIONS (FEATURED + CATALOG) -->
+        <div id="subscriptions-section" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                <div>
+                    <span class="text-xs font-extrabold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-fire text-amber-500"></i> أقوى العروض والاشتراكات الأصلية
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">الاشتراكات الرقمية المتوفرة</h3>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div id="category-tabs-wrapper" class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+                    <button onclick="setCategory('all')" data-cat="all" class="cat-btn bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition shadow-lg shadow-indigo-600/30">
+                        الكل
+                    </button>
+                    <button onclick="setCategory('ai')" data-cat="ai" class="cat-btn bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition border border-slate-200 dark:border-slate-800">
+                        <i class="fa-solid fa-wand-magic-sparkles text-indigo-500 ml-1"></i> ذكاء اصطناعي
+                    </button>
+                    <button onclick="setCategory('streaming')" data-cat="streaming" class="cat-btn bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition border border-slate-200 dark:border-slate-800">
+                        <i class="fa-solid fa-play text-red-500 ml-1"></i> ترفيه ومشاهدة
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="products-grid" class="space-y-8">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+
+        <!-- SECTION 2: WEB DEVELOPMENT SERVICES -->
+        <section id="webdev-section" class="scroll-mt-24 relative rounded-3xl bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 border border-cyan-500/30 p-6 sm:p-10 shadow-2xl overflow-hidden">
+            <!-- Decorative Glow -->
+            <div class="absolute -top-20 -left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 relative z-10">
+                <div class="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300 px-4 py-1 rounded-full text-xs font-extrabold mb-3">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>خدمات البرمجة وتطوير الويب من AI Store Plus</span>
+                </div>
+                <h3 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-3">
+                    خدمة إنشاء وتصميم المواقع الإلكترونية
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                    عاوز تعمل موقع زي ده لمشروعك؟ نصمم لك مواقع ومتاجر إلكترونية سريعة، عصرية، ومتجاوبة مع الموبايل والكمبيوتر، ومربوطة مباشرة بالواتساب لاستقبال طلبات عملائك بدون أي تعقيد!
+                </p>
+            </div>
+
+            <!-- 3 Web Packages Grid -->
+            <div id="web-packages-grid" class="grid grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto gap-6 relative z-10 mb-12">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Custom Website Inquiry Interactive Card -->
+            <div id="custom-web-form" class="scroll-mt-24 bg-slate-100/70 dark:bg-slate-800/60 border border-indigo-500/40 rounded-3xl p-6 sm:p-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-3">
+                        <div class="inline-flex items-center gap-2 text-purple-600 dark:text-purple-300 font-bold text-xs bg-purple-500/10 border border-purple-500/30 px-3 py-1 rounded-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>طلب تصميم مخصص حسب فكرتك</span>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">عندك فكرة موقع أو متجر خاص؟</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            املأ البيانات البسيطة دي وحدد نوع الموقع اللي محتاجه، وهيتفتح معاك الواتساب فوراً برسالة جاهزة عشان نتفق على كل التفاصيل والتكلفة المناسبة لميزانيتك.
+                        </p>
+                        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> تصميم متجاوب 100% مع كل شاشات الموبايل</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> ربط مباشر بالواتساب والسوشيال ميديا</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> شرح كامل لطريقة إدارة الموقع وتعديل الأسعار</li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-white/90 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-5 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">نوع الموقع المطلوب:</label>
+                                <select id="custom-web-type" class="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500">
+                                    <option value="متجر إلكتروني مربوط بالواتساب (مثل AI Store Plus)">متجر إلكتروني مربوط بالواتساب (مثل AI Store Plus)</option>
+                                    <option value="موقع شخصي / بورتفوليو / صفحة هبوط">موقع شخصي / بورتفوليو / صفحة هبوط</option>
+                                    <option value="موقع تعريفي لشركة أو مكتب">موقع تعريفي لشركة أو مكتب</option>
+                                    <option value="منصة تعليمية / بيع كورسات أو ملفات">منصة تعليمية / بيع كورسات أو ملفات</option>
+                                    <option value="تعديل أو تطوير موقع موجود بالفعل">تعديل أو تطوير موقع موجود بالفعل</option>
+                                    <option value="فكرة أخرى مخصصة">فكرة أخرى مخصصة</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">اسم النشاط أو المشروع (اختياري):</label>
+                                <input type="text" id="custom-web-brand" placeholder="مثال: متجر ملابس / شركة تسويق..." class="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">تفاصيل إضافية أو مميزات تريدها في موقعك:</label>
+                            <textarea id="custom-web-details" rows="2" placeholder="اكتب باختصار فكرة الموقع، عدد الصفحات، أو أي استفسار..." class="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500"></textarea>
+                        </div>
+
+                        <button onclick="sendCustomWebRequest()" class="w-full bg-gradient-to-l from-emerald-500 to-whatsapp hover:from-emerald-600 hover:to-emerald-500 text-white font-black py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition text-sm sm:text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>اطلب تصميم موقعك الآن عبر واتساب</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2">طريقة الطلب والاستلام في AI Store Plus</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">سواء كنت تطلب اشتراكاً رقمياً أو تصميم موقع، خطواتنا بسيطة وسريعة!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70 rounded-2xl p-6 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl font-black mx-auto mb-4">
+                        1
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">اختر الاشتراك أو باقة الموقع</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        حدد مدة الاشتراك المناسبة لك أو باقة تصميم موقعك واضغط على <span class="text-emerald-600 dark:text-emerald-400 font-semibold">"اطلب الآن عبر واتساب"</span> أو أضفها للسلة.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70 rounded-2xl p-6 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl font-black mx-auto mb-4">
+                        2
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">حول المبلغ بسهولة</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        تفتح معك محادثة واتساب جاهزة بتفاصيل طلبك، ويمكنك الدفع عبر <span class="text-red-600 dark:text-red-400 font-semibold">فودافون كاش</span> أو <span class="text-purple-600 dark:text-purple-400 font-semibold">إنستا باي</span>.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70 rounded-2xl p-6 text-center relative">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl font-black mx-auto mb-4">
+                        3
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">استلم فوراً بضمان كامل</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        بمجرد تأكيد التحويل، يتم تفعيل الاشتراك على إيميلك الشخصي أو تسليم الحساب فوراً مع ضمان كامل المدة.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CUSTOMER REVIEWS -->
+        <section id="reviews-section" class="scroll-mt-24">
+            <div class="text-center mb-10">
+                <span class="text-xs font-extrabold text-amber-500 uppercase tracking-wider flex items-center justify-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-star"></i> ثقة عملائنا سر نجاحنا
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2">آراء وتجارب العملاء</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">تقييمات حقيقية من عملائنا في الاشتراكات الرقمية وخدمات تصميم المواقع</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-indigo-600/15 text-indigo-600 dark:text-indigo-400 font-black flex items-center justify-center">م</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">محمود عبد الرحمن</h4>
+                                <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">اشتراك جمناي بريميوم 18 شهر</span>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        "التفعيل تم في أقل من 5 دقائق على إيميلي الشخصي، والاشتراك شغال ممتاز جداً في البحث والبرمجة، وسعر 18 شهر بصراحة لقطة!"
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-cyan-600/15 text-cyan-600 dark:text-cyan-400 font-black flex items-center justify-center">س</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">سارة خالد</h4>
+                                <span class="text-[11px] text-cyan-600 dark:text-cyan-400 font-semibold">تصميم متجر إلكتروني</span>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        "طلبت متجر مربوط بالواتساب لشغلي، التصميم طلع شيك جداً وسريع على الموبايل، والعملاء بقوا يطلبوا بسهولة من غير تشتيت."
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-600/15 text-purple-600 dark:text-purple-400 font-black flex items-center justify-center">أ</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white">أحمد طارق</h4>
+                                <span class="text-[11px] text-purple-600 dark:text-purple-400 font-semibold">نتفليكس حساب عائلي</span>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        "تعامل راقي جداً ودعم فني سريع على الواتساب. حولت إنستا باي واستلمت التفعيل في نفس اللحظة. أنصح بالتعامل معاهم بشدة."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FAQ ACCORDION -->
+        <section id="faq-section" class="scroll-mt-24 max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2">الأسئلة الشائعة</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">إجابات وافية لأكثر الأسئلة التي تهمك قبل الطلب</p>
+            </div>
+
+            <div class="space-y-3" id="faq-container">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-right flex items-center justify-between font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+                        <span>كم يستغرق تفعيل الاشتراك بعد التحويل؟</span>
+                        <i id="faq-icon-0" class="fa-solid fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-0" class="px-6 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        يتم التفعيل والتسليم بشكل فوري خلال 5 إلى 15 دقيقة كحد أقصى من تأكيد التحويل عبر الواتساب، مع إرسال كافة إرشادات الاستخدام.
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-right flex items-center justify-between font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+                        <span>هل الاشتراكات رسمية وعليها ضمان؟</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        نعم، جميع الاشتراكات أصلية 100% ومشمولة بضمان ذهبي طوال فترة الاشتراك كاملة ضد أي انقطاع، مع دعم فني متواصل عبر الواتساب.
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-right flex items-center justify-between font-bold text-sm sm:text-base text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+                        <span>كيف أستلم الموقع الإلكتروني بعد تصميمه وهل يمكنني تعديل الأسعار بنفسي؟</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-indigo-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden px-6 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        تستلم موقعك جاهزاً بالكامل مع لوحة إعدادات مدمجة وسهلة جداً تمكنك من تعديل الأسعار، إضافة منتجات، وتغيير رقم الواتساب الخاص بك بضغطة زر بدون أي خبرة برمجية.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800 py-8 px-4 text-center text-slate-500 dark:text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <svg viewBox="0 0 64 64" class="w-5 h-5 inline-block align-middle" xmlns="http://www.w3.org/2000/svg" aria-label="AI Store Plus">
+                    <defs>
+                        <linearGradient id="ft-bg" x1="6" y1="58" x2="58" y2="6" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="0.55" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/>
+                        </linearGradient>
+                        <linearGradient id="ft-star" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#9333ea"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#ft-bg)"/>
+                    <path d="M24 27v-3.5a8 8 0 0 1 16 0V27" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M16.5 27h31l-2.3 21.5a4 4 0 0 1-4 3.5H22.8a4 4 0 0 1-4-3.5Z" fill="#fff"/>
+                    <path transform="translate(24.5 31.5) scale(0.625)" d="M12 0C12.6 6.5 17.5 11.4 24 12C17.5 12.6 12.6 17.5 12 24C11.4 17.5 6.5 12.6 0 12C6.5 11.4 11.4 6.5 12 0Z" fill="url(#ft-star)"/>
+                    <circle cx="50" cy="14" r="9" fill="#f59e0b" stroke="#fff" stroke-width="2.5"/>
+                    <path d="M50 10v8M46 14h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span id="footer-store-name" class="font-bold text-slate-900 dark:text-white">AI Store Plus</span>
+                <span>— جميع الحقوق محفوظة © 2026</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-check-circle text-emerald-600"></i> فودافون كاش</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-check-circle text-purple-600"></i> InstaPay</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-check-circle text-amber-500"></i> اتصالات & أورانج كاش</span>
+                <button onclick="openAdminModal()" class="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-1" title="إعدادات التاجر">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>لوحة التاجر</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="contactGeneralWhatsApp()" title="تواصل معنا عبر واتساب" class="whatsapp-float fixed bottom-6 left-6 z-40 bg-whatsapp hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl shadow-emerald-500/40 flex items-center justify-center text-3xl transition">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <!-- Shopping Cart & Checkout Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 bg-slate-100/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                    <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">سلة المشتريات وإتمام الطلب</h3>
+                </div>
+                <button onclick="toggleCartModal()" class="text-slate-500 hover:text-slate-900 dark:hover:text-white w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-slate-700/50 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto space-y-5 flex-grow">
+                <!-- Cart Items List -->
+                <div id="cart-items-container" class="space-y-3">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <!-- Payment & Customer Info Form -->
+                <div id="checkout-form" class="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-2">اختر طريقة الدفع المفضلة لك:</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="payment_method" value="فودافون كاش (Vodafone Cash)" checked class="peer sr-only">
+                                <div class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800 peer-checked:border-red-500 peer-checked:bg-red-500/10 text-center transition">
+                                    <i class="fa-solid fa-mobile-screen-button text-red-600 text-lg mb-1"></i>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white">فودافون كاش</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="payment_method" value="إنستا باي (InstaPay)" class="peer sr-only">
+                                <div class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800 peer-checked:border-purple-500 peer-checked:bg-purple-500/10 text-center transition">
+                                    <i class="fa-solid fa-building-columns text-purple-600 text-lg mb-1"></i>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white">إنستا باي</div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="payment_method" value="محفظة إلكترونية (اتصالات / أورانج)" class="peer sr-only">
+                                <div class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 text-center transition">
+                                    <i class="fa-solid fa-wallet text-emerald-600 text-lg mb-1"></i>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white">محفظة أخرى</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Numbers Display if set by Seller -->
+                    <div id="seller-payment-box" class="bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 rounded-xl p-3 text-xs text-indigo-700 dark:text-indigo-300 space-y-1">
+                        <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-info text-indigo-600 dark:text-indigo-400"></i>
+                            <span>بيانات التحويل المباشر:</span>
+                        </div>
+                        <p id="display-payment-info">سيتم إرسال رقم التحويل لك فور الضغط على إرسال الطلب عبر واتساب.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">الاسم (اختياري):</label>
+                            <input type="text" id="cust-name" placeholder="مثال: أحمد محمد" class="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">إيميل التفعيل / ملاحظة (اختياري):</label>
+                            <input type="text" id="cust-note" placeholder="أدخل إيميلك لو الاشتراك يتطلب" class="w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-5 bg-slate-100/90 dark:bg-slate-800/90 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-600 dark:text-slate-300 font-bold">الإجمالي المطلوب:</span>
+                    <span id="cart-total-price" class="text-2xl font-black text-emerald-600 dark:text-emerald-400">0 ج.م</span>
+                </div>
+                <button onclick="sendCartToWhatsApp()" id="checkout-whatsapp-btn" class="w-full bg-whatsapp hover:bg-emerald-500 text-white font-black py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 transition text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>إرسال الطلب الآن على واتساب</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seller Admin Settings Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="px-6 py-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                    <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">إعدادات المتجر (تخصيص التاجر)</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-500 hover:text-slate-900 dark:hover:text-white w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-slate-700 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-6 flex-grow">
+                <!-- Section 1: WhatsApp, Display Mode & Store Info -->
+                <div class="bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 space-y-4">
+                    <h4 class="font-bold text-indigo-700 dark:text-indigo-300 text-sm flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-whatsapp text-lg"></i>
+                        <span>بيانات استلام الطلبات وطريقة العرض</span>
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">رقم الواتساب الخاص بك (مع كود الدولة):</label>
+                            <input type="text" id="admin-whatsapp" dir="ltr" placeholder="201226057686" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white font-mono focus:outline-none focus:border-indigo-500">
+                            <p class="text-[11px] text-slate-500 mt-1">مثال لمصر: اكتب 20 ثم رقمك بدون صفر في البداية</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">اسم متجرك:</label>
+                            <input type="text" id="admin-store-name" placeholder="AI Store Plus" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">أرقام الدفع (فودافون كاش / إنستا باي) لتظهر للعميل:</label>
+                        <input type="text" id="admin-payment-info" placeholder="مثال: فودافون كاش: 010xxxx / إنستا باي: username@instapay" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">نظام عرض الاشتراكات في الموقع:</label>
+                        <select id="admin-display-mode" class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500">
+                            <option value="all">عرض البطل (جمناي) + جميع الاشتراكات الإضافية</option>
+                            <option value="single">عرض اشتراك واحد فقط (جمناي بريميوم)</option>
+                        </select>
+                    </div>
+                    <button onclick="saveStoreSettings()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>حفظ بيانات المتجر والواتساب</span>
+                    </button>
+                </div>
+
+                <!-- Section 2: Edit the Featured Subscription Product -->
+                <div class="bg-slate-100/50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 space-y-4">
+                    <h4 class="font-bold text-emerald-700 dark:text-emerald-400 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-emerald-600 text-lg"></i>
+                        <span>تعديل الاشتراك الرئيسي المميز (العرض الأول)</span>
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs text-slate-600 dark:text-slate-300 mb-1">اسم الاشتراك:</label>
+                            <input type="text" id="new-prod-title" placeholder="مثال: جمناي بريميوم (Google Gemini)" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 dark:text-slate-300 mb-1">وصف قصير (نوع الحساب):</label>
+                            <input type="text" id="new-prod-desc" placeholder="اشتراك جمناي المتقدم لمدة 18 شهر كاملة" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 dark:text-slate-300 mb-1">سعر الشهر (ج.م) - اختياري:</label>
+                            <input type="number" id="new-prod-p1" placeholder="اتركه فارغاً لو غير متاح" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 dark:text-slate-300 mb-1">سعر 3 شهور (ج.م) - اختياري:</label>
+                            <input type="number" id="new-prod-p3" placeholder="اتركه فارغاً لو غير متاح" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs text-slate-600 dark:text-slate-300 mb-1">سعر 18 شهر (ج.م):</label>
+                            <input type="number" id="new-prod-p12" placeholder="275" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-white">
+                        </div>
+                    </div>
+                    <button onclick="updateSingleProduct()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-check"></i>
+                        <span>تحديث الاشتراك المعروض</span>
+                    </button>
+                </div>
+
+                <!-- Reset Default Data -->
+                <div class="flex items-center justify-between pt-2 text-xs text-slate-500">
+                    <span>هل تريد استعادة بيانات الاشتراكات الافتراضية؟</span>
+                    <button onclick="resetToDefaults()" class="text-red-600 hover:underline font-bold">استعادة الافتراضي</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Safe localStorage Wrapper for Canvas Sandbox ---
+        function safeGetStorage(key, fallback) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : fallback;
+            } catch (e) {
+                return fallback;
+            }
+        }
+
+        function safeSetStorage(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+            } catch (e) {
+                // Ignore storage errors in sandboxed context
+            }
+        }
+
+        function safeRemoveStorage(key) {
+            try {
+                localStorage.removeItem(key);
+            } catch (e) {
+                // Ignore storage errors
+            }
+        }
+
+        // --- Default Store Settings & Products ---
+        const DEFAULT_SETTINGS = {
+            whatsapp: "201226057686",
+            storeName: "AI Store Plus",
+            paymentInfo: "فودافون كاش أو إنستا باي — سيتم إرسال الرقم فور فتح محادثة الواتساب لتأكيد الطلب.",
+            displayMode: "all"
+        };
+
+        // Web Development Packages Data (3 Balanced Tiers)
+        const WEB_DEV_PACKAGES = [
+            {
+                id: "web-landing",
+                title: "صفحة هبوط / بورتفوليو احترافي",
+                subtitle: "صفحة تعريفية سريعة وجذابة لعرض خدماتك أو أعمالك واستقبال رسائل العملاء",
+                badge: "بداية سريعة 🚀",
+                badgeColor: "bg-cyan-600",
+                popular: false,
+                icon: "fa-solid fa-rocket",
+                price: 850,
+                delivery: "تسليم خلال 1 - 2 يوم",
+                features: [
+                    "تصميم عصري صفحة واحدة متجاوبة مع الموبايل والكمبيوتر",
+                    "ربط مباشر بأزرار الواتساب وحسابات السوشيال ميديا",
+                    "عرض خدماتك أو سابقة أعمالك وآراء عملائك بشكل أنيق",
+                    "سرعة تحميل فائقة وتجربة مستخدم سلسة",
+                    "تعديلات مجانية حتى الرضا الكامل عند التسليم"
+                ]
+            },
+            {
+                id: "web-store",
+                title: "متجر إلكتروني ذكي",
+                subtitle: "نفس فكرة هذا الموقع! مثالي لبيع الاشتراكات، الملابس، الإلكترونيات، أو الخدمات",
+                badge: "الأكثر طلباً للتجار 🔥",
+                badgeColor: "bg-indigo-600",
+                popular: true,
+                icon: "fa-solid fa-store",
+                price: 1400,
+                delivery: "تسليم خلال 2 - 4 أيام",
+                features: [
+                    "عرض جميع منتجاتك وخدماتك مع تقسيم الأقسام والبحث",
+                    "سلة مشتريات ذكية تحسب الإجمالي وترسل الطلب على الواتساب",
+                    "لوحة إعدادات سهلة لإضافة المنتجات وتعديل الأسعار ورقمك",
+                    "تجهيز خيارات الدفع (فودافون كاش وإنستا باي)",
+                    "دعم فني وشرح كامل لطريقة إدارة المتجر بنفسك"
+                ]
+            },
+            {
+                id: "web-business",
+                title: "موقع متكامل للشركات والأعمال (Pro)",
+                subtitle: "موقع احترافي متعدد الصفحات والأقسام للشركات والمشاريع الطموحة",
+                badge: "احترافي شامل 💎",
+                badgeColor: "bg-purple-600",
+                popular: false,
+                icon: "fa-solid fa-building-shield",
+                price: 2800,
+                delivery: "تسليم خلال 5 - 7 أيام",
+                features: [
+                    "تصميم مخصص بالكامل يعكس هوية شركتك أو علامتك التجارية",
+                    "صفحات وأقسام متعددة مع نماذج حجز أو طلب خدمات مخصصة",
+                    "تهيئة ممتازة لمحركات البحث (SEO) لظهور موقعك في جوجل",
+                    "حماية عالية وأداء فائق السرعة على جميع الأجهزة",
+                    "مساعدة في ربط الدومين الرسمي والاستضافة ودعم فني لمدة شهر"
+                ]
+            }
+        ];
+
+        // Gemini sparkle icon (inline SVG)
+        function isGeminiProduct(product) {
+            return /gemini|جمناي|جيمناي|جيميناي/i.test(product.title || '');
+        }
+        function geminiSvg(sizeClass, gradId, plain) {
+            const star = 'M12 0C12.6 6.5 17.5 11.4 24 12C17.5 12.6 12.6 17.5 12 24C11.4 17.5 6.5 12.6 0 12C6.5 11.4 11.4 6.5 12 0Z';
+            return `<svg viewBox="0 0 24 24" class="${sizeClass}" xmlns="http://www.w3.org/2000/svg" aria-label="Gemini">
+                ${plain ? '' : `<defs><linearGradient id="${gradId}" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#4285f4"/><stop offset="0.5" stop-color="#9b72cb"/><stop offset="1" stop-color="#d96570"/>
+                </linearGradient></defs>`}
+                <path d="${star}" fill="${plain ? 'currentColor' : `url(#${gradId})`}"/>
+            </svg>`;
+        }
+        function productIconHtml(product) {
+            return isGeminiProduct(product)
+                ? geminiSvg('w-8 h-8', 'gem-grad-' + product.id, false)
+                : `<i class="${product.icon}"></i>`;
+        }
+        function productBgIconHtml(product) {
+            return isGeminiProduct(product)
+                ? `<span class="absolute -bottom-8 -left-8 text-white/10 rotate-12 pointer-events-none">${geminiSvg('w-44 h-44', '', true)}</span>`
+                : `<i class="${product.icon} absolute -bottom-6 -left-6 text-9xl text-white/10 rotate-12 pointer-events-none"></i>`;
+        }
+
+        const DEFAULT_PRODUCTS = [
+            {
+                id: "featured-sub",
+                featured: true,
+                title: "جمناي بريميوم (Google Gemini)",
+                subtitle: "اشتراك جمناي المتقدم لمدة 18 شهر كاملة بسعر 275 ج.م فقط!",
+                category: "ai",
+                badge: "عرض 18 شهر الأقوى ✨",
+                badgeColor: "bg-amber-500",
+                icon: "fa-solid fa-wand-magic-sparkles",
+                colorFrom: "from-blue-600 via-indigo-600",
+                colorTo: "to-purple-600",
+                features: [
+                    "تفعيل رسمي فوري على حسابك الشخصي بمجرد الدفع",
+                    "أقوى نماذج Gemini Pro & Advanced مع مساحة سحابية",
+                    "حساب أصلي مضمون 100% طوال فترة الـ 18 شهر",
+                    "يعمل على الموبايل والكمبيوتر وكل أجهزتك بدعم متواصل"
+                ],
+                prices: {
+                    "18 شهر": 275
+                }
+            },
+            {
+                id: "claude-max",
+                title: "كلود ماكس (Claude Max)",
+                subtitle: "حساب Claude Max بـ 500 ج.م فقط بدل 5000 ج.م!",
+                category: "ai",
+                badge: "خصم 90% 🔥",
+                badgeColor: "bg-amber-500",
+                icon: "fa-solid fa-brain",
+                colorFrom: "from-orange-600 via-amber-600",
+                colorTo: "to-rose-600",
+                features: [
+                    "حساب Claude Max بأعلى حدود استخدام ووصول لأحدث النماذج",
+                    "تفعيل سريع بمجرد الدفع مع تعليمات الاستخدام",
+                    "ضمان كامل طوال فترة الاشتراك ودعم فني على الواتساب",
+                    "يعمل على الموبايل والكمبيوتر"
+                ],
+                prices: {
+                    "حساب Max": 500
+                }
+            },
+            {
+                id: "netflix-family",
+                title: "نتفليكس حساب عائلي (Netflix)",
+                subtitle: "حساب عائلي يشترك فيه 5 أفراد بسعر 500 ج.م فقط",
+                category: "streaming",
+                badge: "حساب عائلي 5 أفراد 🍿",
+                badgeColor: "bg-red-600",
+                icon: "fa-solid fa-tv",
+                colorFrom: "from-red-600",
+                colorTo: "to-rose-900",
+                features: [
+                    "حساب عائلي لـ 5 أفراد بسعر واحد",
+                    "ترجمة عربية وأحدث المسلسلات والأفلام",
+                    "يعمل على الشاشات الذكية والموبايل والكمبيوتر",
+                    "ضمان كامل وتفعيل سريع"
+                ],
+                prices: {
+                    "حساب عائلي (5 أفراد)": 500
+                }
+            }
+        ];
+
+        // --- State Management ---
+        let storeSettings = safeGetStorage('subStore_settings_v3', null) || { ...DEFAULT_SETTINGS };
+        let savedProducts = safeGetStorage('subStore_products_v5', null);
+        let products = (savedProducts && Array.isArray(savedProducts) && savedProducts.length > 0)
+            ? savedProducts
+            : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+        let cart = [];
+        let selectedDurations = {};
+        let currentCategory = 'all';
+
+        function initDurations() {
+            products.forEach(p => {
+                const firstKey = Object.keys(p.prices)[0];
+                if (!selectedDurations[p.id] || !p.prices[selectedDurations[p.id]]) {
+                    selectedDurations[p.id] = firstKey;
+                }
+            });
+        }
+
+        // --- Dark Mode Toggle ---
+        function toggleDarkMode() {
+            const htmlEl = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            htmlEl.classList.toggle('dark');
+            const isDark = htmlEl.classList.contains('dark');
+            icon.className = isDark ? 'fa-solid fa-sun text-sm' : 'fa-solid fa-moon text-sm';
+            safeSetStorage('subStore_dark', isDark);
+        }
+
+        function toggleSellerBanner() {
+            const banner = document.getElementById('seller-top-banner');
+            banner.classList.toggle('hidden');
+        }
+
+        // --- FAQ Toggle ---
+        function toggleFaq(index) {
+            const ans = document.getElementById('faq-ans-' + index);
+            const icon = document.getElementById('faq-icon-' + index);
+            if (!ans) return;
+            ans.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // --- UI Rendering ---
+        function applyStoreSettingsToUI() {
+            document.getElementById('store-name-display').textContent = storeSettings.storeName;
+            document.getElementById('footer-store-name').textContent = storeSettings.storeName;
+            document.getElementById('display-payment-info').textContent = storeSettings.paymentInfo;
+            
+            // Populate Admin Modal Inputs
+            document.getElementById('admin-whatsapp').value = storeSettings.whatsapp;
+            document.getElementById('admin-store-name').value = storeSettings.storeName;
+            document.getElementById('admin-payment-info').value = storeSettings.paymentInfo;
+            document.getElementById('admin-display-mode').value = storeSettings.displayMode || 'all';
+
+            const catWrapper = document.getElementById('category-tabs-wrapper');
+            if (catWrapper) {
+                catWrapper.style.display = (storeSettings.displayMode === 'single') ? 'none' : 'flex';
+            }
+
+            // Populate Featured Product Admin Inputs
+            if (products[0]) {
+                const p = products[0];
+                document.getElementById('new-prod-title').value = p.title;
+                document.getElementById('new-prod-desc').value = p.subtitle;
+                document.getElementById('new-prod-p1').value = p.prices["شهر واحد"] || '';
+                document.getElementById('new-prod-p3').value = p.prices["3 شهور"] || '';
+                document.getElementById('new-prod-p12').value = p.prices["18 شهر"] || '';
+            }
+        }
+
+        function renderWebPackages() {
+            const container = document.getElementById('web-packages-grid');
+            if (!container) return;
+
+            container.innerHTML = WEB_DEV_PACKAGES.map(pkg => `
+                <div class="card-glow rounded-3xl p-6 flex flex-col justify-between relative ${pkg.popular ? 'bg-gradient-to-b from-indigo-50 to-white dark:from-indigo-950/60 dark:to-slate-900 border-2 border-indigo-500 shadow-xl shadow-indigo-500/10' : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm'}">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-12 h-12 rounded-2xl ${pkg.popular ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400'} flex items-center justify-center text-2xl shadow">
+                                <i class="${pkg.icon}"></i>
+                            </div>
+                            <span class="${pkg.badgeColor} text-white text-xs font-extrabold px-3 py-1 rounded-full">
+                                ${pkg.badge}
+                            </span>
+                        </div>
+
+                        <h4 class="text-xl font-black text-slate-900 dark:text-white mb-2">${pkg.title}</h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">${pkg.subtitle}</p>
+
+                        <div class="bg-slate-50/70 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 mb-5 flex items-baseline justify-between">
+                            <div>
+                                <span class="text-xs text-slate-500 dark:text-slate-400 block">تكلفة الباقة:</span>
+                                <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold"><i class="fa-regular fa-clock ml-1"></i>${pkg.delivery}</span>
+                            </div>
+                            <div class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+                                ${pkg.price} <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400">ج.م</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 mb-6">
+                            ${pkg.features.map(f => `
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-cyan-600 dark:text-cyan-400 mt-0.5"></i>
+                                    <span>${f}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="flex items-center gap-2 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+                        <button onclick="orderWebPackageWhatsApp('${pkg.id}')" class="flex-1 bg-whatsapp hover:bg-emerald-500 text-white font-black py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>اطلب تصميم هذه الباقة</span>
+                        </button>
+                        <button onclick="addWebPackageToCart('${pkg.id}')" title="أضف الباقة إلى السلة" class="bg-slate-100 dark:bg-slate-800 hover:bg-indigo-600 text-slate-900 dark:text-white hover:text-white p-3 rounded-xl border border-slate-200 dark:border-slate-700 transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderProducts() {
+            initDurations();
+            const grid = document.getElementById('products-grid');
+            if (!grid) return;
+
+            const searchVal = (document.getElementById('search-input')?.value || '').trim().toLowerCase();
+
+            // Determine list based on displayMode, category, and search query
+            let sourceList = (storeSettings.displayMode === 'single') ? [products[0]] : products;
+            let filtered = sourceList.filter(p => {
+                const matchCat = (currentCategory === 'all') || (p.category === currentCategory);
+                const matchSearch = !searchVal ||
+                    p.title.toLowerCase().includes(searchVal) ||
+                    p.subtitle.toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-10 text-center space-y-3">
+                        <i class="fa-solid fa-magnifying-glass text-3xl text-slate-400"></i>
+                        <h4 class="text-lg font-bold text-slate-800 dark:text-white">لا توجد نتائج مطابقة لبحثك</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">جرب البحث بكلمة أخرى أو تصفح جميع الأقسام</p>
+                        <button onclick="setCategory('all'); document.getElementById('search-input').value=''; document.getElementById('search-input-mobile').value=''; renderProducts();" class="bg-indigo-600 text-white text-xs font-bold px-4 py-2 rounded-xl">عرض جميع الاشتراكات</button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Separate featured hero card (first item if featured) and regular catalog cards
+            const featuredItem = filtered.find(p => p.id === 'featured-sub');
+            const otherItems = filtered.filter(p => p.id !== 'featured-sub');
+
+            let html = '';
+
+            if (featuredItem) {
+                const durations = Object.keys(featuredItem.prices);
+                const activeDuration = selectedDurations[featuredItem.id] || durations[0];
+                const currentPrice = featuredItem.prices[activeDuration];
+
+                html += `
+                    <div class="card-glow bg-white dark:bg-slate-900 border-2 border-indigo-500/70 rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/10 max-w-4xl mx-auto">
+                        <!-- Top Hero Banner of Featured Card -->
+                        <div class="bg-gradient-to-l ${featuredItem.colorFrom} ${featuredItem.colorTo} p-6 sm:p-8 relative overflow-hidden">
+                            <div class="flex items-center justify-between relative z-10 mb-4">
+                                <div class="w-14 h-14 rounded-2xl bg-white/25 backdrop-blur-md flex items-center justify-center text-amber-400 text-3xl shadow-inner">
+                                    ${productIconHtml(featuredItem)}
+                                </div>
+                                <span class="${featuredItem.badgeColor} text-white text-xs sm:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-lg">
+                                    ${featuredItem.badge}
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-black text-white relative z-10">${featuredItem.title}</h3>
+                            <p class="text-sm sm:text-base text-indigo-100 mt-2 relative z-10">${featuredItem.subtitle}</p>
+                            ${productBgIconHtml(featuredItem)}
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-5">
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 mb-2.5">${durations.length === 1 ? 'مدة الاشتراك:' : 'اختر مدة الاشتراك المطلوبة:'}</label>
+                                    <div class="${durations.length === 1 ? 'grid-cols-1' : durations.length === 2 ? 'grid-cols-2' : 'grid-cols-3'} grid gap-2 bg-slate-100 dark:bg-slate-800 p-2 rounded-2xl border border-slate-200 dark:border-slate-700">
+                                        ${durations.map(dur => `
+                                            <button onclick="selectDuration('${featuredItem.id}', '${dur}')" 
+                                                class="py-2.5 px-3 rounded-xl text-xs sm:text-sm font-extrabold transition truncate ${activeDuration === dur ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600'}">
+                                                ${dur}
+                                            </button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+
+                                <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    ${featuredItem.features.map(f => `
+                                        <li class="flex items-center gap-2.5">
+                                            <i class="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400 text-base"></i>
+                                            <span>${f}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="md:col-span-5 bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 text-center space-y-4">
+                                <div>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400 font-bold block mb-1">السعر الإجمالي (${activeDuration}):</span>
+                                    <div class="text-4xl font-black text-emerald-600 dark:text-emerald-400">
+                                        ${currentPrice} <span class="text-base font-bold text-slate-600 dark:text-slate-300">ج.م</span>
+                                    </div>
+                                    <span class="text-[11px] text-indigo-700 dark:text-indigo-300 mt-1 block">شامل الضمان الكامل والتفعيل الفوري</span>
+                                </div>
+
+                                <div class="space-y-2.5 pt-2">
+                                    <button onclick="directWhatsAppOrder('${featuredItem.id}')" class="w-full bg-whatsapp hover:bg-emerald-500 text-white font-black py-3.5 px-4 rounded-xl text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition">
+                                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                        <span>اطلب الاشتراك الآن واتساب</span>
+                                    </button>
+                                    <button onclick="addToCart('${featuredItem.id}')" class="w-full bg-white dark:bg-slate-900 hover:bg-indigo-600 text-slate-700 dark:text-slate-200 hover:text-white font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-slate-700 hover:border-indigo-500 flex items-center justify-center gap-2 transition">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                        <span>إضافة إلى السلة</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (otherItems.length > 0) {
+                html += `
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${otherItems.map(product => {
+                            const durations = Object.keys(product.prices);
+                            const activeDuration = selectedDurations[product.id] || durations[0];
+                            const currentPrice = product.prices[activeDuration];
+
+                            return `
+                                <div class="card-glow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between shadow-sm">
+                                    <div>
+                                        <div class="bg-gradient-to-l ${product.colorFrom} ${product.colorTo} p-5 relative overflow-hidden">
+                                            <div class="flex items-center justify-between relative z-10 mb-3">
+                                                <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-xl shadow-inner">
+                                                    ${productIconHtml(product)}
+                                                </div>
+                                                <span class="${product.badgeColor} text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow">
+                                                    ${product.badge}
+                                                </span>
+                                            </div>
+                                            <h4 class="text-lg font-black text-white relative z-10">${product.title}</h4>
+                                            <p class="text-xs text-white/85 mt-1 relative z-10 leading-relaxed">${product.subtitle}</p>
+                                        </div>
+
+                                        <div class="p-5 space-y-4">
+                                            <div>
+                                                <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">اختر المدة:</label>
+                                                <div class="grid ${durations.length === 1 ? 'grid-cols-1' : durations.length === 2 ? 'grid-cols-2' : 'grid-cols-3'} gap-1.5 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700">
+                                                    ${durations.map(dur => `
+                                                        <button onclick="selectDuration('${product.id}', '${dur}')" 
+                                                            class="py-1.5 px-2 rounded-lg text-xs font-extrabold transition truncate ${activeDuration === dur ? 'bg-indigo-600 text-white shadow' : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600'}">
+                                                            ${dur}
+                                                        </button>
+                                                    `).join('')}
+                                                </div>
+                                            </div>
+
+                                            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                                                ${product.features.map(f => `
+                                                    <li class="flex items-start gap-2">
+                                                        <i class="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400 mt-0.5"></i>
+                                                        <span>${f}</span>
+                                                    </li>
+                                                `).join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-5 pt-3 border-t border-slate-100 dark:border-slate-800 space-y-3">
+                                        <div class="flex items-baseline justify-between">
+                                            <span class="text-xs text-slate-500 dark:text-slate-400 font-bold">السعر (${activeDuration}):</span>
+                                            <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">
+                                                ${currentPrice} <span class="text-xs font-bold">ج.م</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <button onclick="directWhatsAppOrder('${product.id}')" class="flex-1 bg-whatsapp hover:bg-emerald-500 text-white font-black py-2.5 px-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/20 transition">
+                                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                                <span>اطلب الآن واتساب</span>
+                                            </button>
+                                            <button onclick="addToCart('${product.id}')" title="إضافة إلى السلة" class="bg-slate-100 dark:bg-slate-800 hover:bg-indigo-600 text-slate-800 dark:text-white hover:text-white p-2.5 px-3.5 rounded-xl border border-slate-200 dark:border-slate-700 transition">
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }
+
+            grid.innerHTML = html;
+        }
+
+        // --- Duration & Category Selection ---
+        function selectDuration(productId, duration) {
+            selectedDurations[productId] = duration;
+            renderProducts();
+        }
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.className = "cat-btn bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition shadow-lg shadow-indigo-600/30";
+                } else {
+                    btn.className = "cat-btn bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition border border-slate-200 dark:border-slate-800";
+                }
+            });
+            renderProducts();
+        }
+
+        function filterProducts(isMobile = false) {
+            const deskInput = document.getElementById('search-input');
+            const mobInput = document.getElementById('search-input-mobile');
+            if (isMobile && deskInput && mobInput) {
+                deskInput.value = mobInput.value;
+            } else if (!isMobile && deskInput && mobInput) {
+                mobInput.value = deskInput.value;
+            }
+            renderProducts();
+        }
+
+        // --- Cart & WhatsApp Order Functions ---
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const duration = selectedDurations[productId] || Object.keys(product.prices)[0];
+            const price = product.prices[duration];
+
+            cart.push({
+                cartItemId: Date.now() + Math.random(),
+                id: product.id,
+                title: product.title,
+                duration: duration,
+                price: price
+            });
+
+            updateCartBadge();
+            showToast(`تمت إضافة "${product.title} (${duration})" إلى السلة!`);
+        }
+
+        function removeFromCart(cartItemId) {
+            cart = cart.filter(item => item.cartItemId !== cartItemId);
+            updateCartBadge();
+            renderCartModalItems();
+        }
+
+        function updateCartBadge() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                renderCartModalItems();
+            }
+        }
+
+        function renderCartModalItems() {
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total-price');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 bg-slate-100/40 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-cart-arrow-down text-3xl text-slate-400 mb-2"></i>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-semibold">السلة فارغة حالياً، أضف بعض الاشتراكات أولاً!</p>
+                    </div>
+                `;
+                totalEl.textContent = `0 ج.م`;
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                total += Number(item.price);
+                return `
+                    <div class="flex items-center justify-between bg-slate-100/70 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 px-4 py-3 rounded-2xl">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">${item.title}</h4>
+                            <span class="text-xs text-indigo-700 dark:text-indigo-300 font-semibold">المدة: ${item.duration}</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-black text-emerald-600 dark:text-emerald-400 text-sm">${item.price} ج.م</span>
+                            <button onclick="removeFromCart(${item.cartItemId})" class="text-red-600 hover:text-red-700 bg-red-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-trash-can text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalEl.textContent = `${total} ج.م`;
+        }
+
+        function cleanPhoneNumber(phone) {
+            let cleaned = (phone || '').replace(/\D/g, '');
+            if (cleaned.startsWith('01')) {
+                cleaned = '2' + cleaned;
+            }
+            return cleaned || "201226057686";
+        }
+
+        // Direct Single-Product Order via WhatsApp
+        function directWhatsAppOrder(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const duration = selectedDurations[productId] || Object.keys(product.prices)[0];
+            const price = product.prices[duration];
+            const phone = cleanPhoneNumber(storeSettings.whatsapp);
+
+            const message = `مرحباً *${storeSettings.storeName}*\nأريد طلب اشتراك جديد:\n\n` +
+                `📦 *الاشتراك:* ${product.title}\n` +
+                `⏳ *المدة:* ${duration}\n` +
+                `💰 *السعر:* ${price} ج.م`;
+
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Order Web Development Package Directly via WhatsApp
+        function orderWebPackageWhatsApp(pkgId) {
+            const pkg = WEB_DEV_PACKAGES.find(p => p.id === pkgId);
+            if (!pkg) return;
+
+            const phone = cleanPhoneNumber(storeSettings.whatsapp);
+            const message = `مرحباً *${storeSettings.storeName}*\nأريد طلب خدمة تصميم وإنشاء موقع إلكتروني:\n\n` +
+                `💻 *الباقة المختارة:* ${pkg.title}\n` +
+                `⏱️ *مدة التنفيذ:* ${pkg.delivery}\n` +
+                `💰 *التكلفة:* ${pkg.price} ج.م\n\n` +
+                `برجاء التواصل معي للاتفاق على تفاصيل الموقع وطريقة الدفع.`;
+
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Add Web Package to Cart
+        function addWebPackageToCart(pkgId) {
+            const pkg = WEB_DEV_PACKAGES.find(p => p.id === pkgId);
+            if (!pkg) return;
+
+            cart.push({
+                cartItemId: Date.now() + Math.random(),
+                id: pkg.id,
+                title: `خدمة تصميم: ${pkg.title}`,
+                duration: pkg.delivery,
+                price: pkg.price
+            });
+
+            updateCartBadge();
+            showToast(`تمت إضافة "${pkg.title}" إلى السلة!`);
+        }
+
+        // Send Custom Website Inquiry Form to WhatsApp
+        function sendCustomWebRequest() {
+            const webType = document.getElementById('custom-web-type').value;
+            const brandName = document.getElementById('custom-web-brand').value.trim();
+            const details = document.getElementById('custom-web-details').value.trim();
+            const phone = cleanPhoneNumber(storeSettings.whatsapp);
+
+            let message = `مرحباً *${storeSettings.storeName}*\nأريد الاستفسار وطلب *تصميم موقع إلكتروني*:\n\n` +
+                `🌐 *نوع الموقع المطلوب:* ${webType}\n`;
+
+            if (brandName) message += `🏷️ *اسم المشروع / النشاط:* ${brandName}\n`;
+            if (details) message += `📝 *التفاصيل المطلوبة:* ${details}\n`;
+
+            message += `\nبانتظار ردكم لمعرفة التكلفة ومدة التنفيذ ✅`;
+
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Multi-Item Cart Order via WhatsApp
+        function sendCartToWhatsApp() {
+            if (cart.length === 0) {
+                showToast('السلة فارغة! أضف اشتراكاً واحداً على الأقل.', true);
+                return;
+            }
+
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked')?.value || 'فودافون كاش';
+            const custName = document.getElementById('cust-name').value.trim();
+            const custNote = document.getElementById('cust-note').value.trim();
+            const phone = cleanPhoneNumber(storeSettings.whatsapp);
+
+            let total = 0;
+            let itemsList = cart.map((item, idx) => {
+                total += Number(item.price);
+                return `${idx + 1}. *${item.title}* (${item.duration}) — ${item.price} ج.م`;
+            }).join('\n');
+
+            let message = `مرحباً *${storeSettings.storeName}*\nأريد تأكيد طلب الاشتراكات التالية:\n\n` +
+                `${itemsList}\n\n` +
+                `💵 *الإجمالي:* ${total} ج.م\n` +
+                `💳 *طريقة الدفع:* ${paymentMethod}\n`;
+
+            if (custName) message += `👤 *الاسم:* ${custName}\n`;
+            if (custNote) message += `📝 *ملاحظات / الإيميل:* ${custNote}\n`;
+
+            message += `\nبانتظار بيانات التحويل لاستلام الاشتراكات فوراً ✅`;
+
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // General Inquiry Floating Button
+        function contactGeneralWhatsApp() {
+            const phone = cleanPhoneNumber(storeSettings.whatsapp);
+            const message = `مرحباً *${storeSettings.storeName}*\nلدي استفسار بخصوص الاشتراكات والخدمات المتاحة لديكم.`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // --- Admin Settings Modal Functions ---
+        function openAdminModal() {
+            applyStoreSettingsToUI();
+            document.getElementById('admin-modal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function saveStoreSettings() {
+            const whatsappInput = document.getElementById('admin-whatsapp').value.trim();
+            const nameInput = document.getElementById('admin-store-name').value.trim();
+            const paymentInput = document.getElementById('admin-payment-info').value.trim();
+            const displayModeInput = document.getElementById('admin-display-mode').value;
+
+            if (!whatsappInput) {
+                showToast('برجاء إدخال رقم الواتساب الخاص بك!', true);
+                return;
+            }
+
+            storeSettings = {
+                whatsapp: cleanPhoneNumber(whatsappInput),
+                storeName: nameInput || "AI Store Plus",
+                paymentInfo: paymentInput || DEFAULT_SETTINGS.paymentInfo,
+                displayMode: displayModeInput || "all"
+            };
+
+            safeSetStorage('subStore_settings_v3', storeSettings);
+            applyStoreSettingsToUI();
+            renderProducts();
+            closeAdminModal();
+            showToast('تم حفظ إعدادات المتجر بنجاح!');
+        }
+
+        function updateSingleProduct() {
+            const title = document.getElementById('new-prod-title').value.trim();
+            const p1 = Number(document.getElementById('new-prod-p1').value);
+            const p3 = Number(document.getElementById('new-prod-p3').value);
+            const p12 = Number(document.getElementById('new-prod-p12').value);
+            const desc = document.getElementById('new-prod-desc').value.trim() || "تفعيل فوري مع ضمان كامل المدة";
+
+            if (!title || !(p1 > 0 || p3 > 0 || p12 > 0)) {
+                showToast('برجاء كتابة اسم الاشتراك وسعر واحد على الأقل!', true);
+                return;
+            }
+
+            const pricesObj = {};
+            if (p1 > 0) pricesObj["شهر واحد"] = p1;
+            if (p3 > 0) pricesObj["3 شهور"] = p3;
+            if (p12 > 0) pricesObj["18 شهر"] = p12;
+
+            products[0] = {
+                ...products[0],
+                title: title,
+                subtitle: desc,
+                prices: pricesObj
+            };
+
+            selectedDurations = {};
+            safeSetStorage('subStore_products_v5', products);
+            renderProducts();
+            closeAdminModal();
+            showToast(`تم تحديث الاشتراك المميز إلى "${title}" بنجاح!`);
+        }
+
+        function resetToDefaults() {
+            safeRemoveStorage('subStore_products_v5');
+            safeRemoveStorage('subStore_settings_v3');
+            storeSettings = { ...DEFAULT_SETTINGS };
+            products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+            selectedDurations = {};
+            applyStoreSettingsToUI();
+            renderProducts();
+            closeAdminModal();
+            showToast('تمت استعادة البيانات الافتراضية بنجاح!');
+        }
+
+        // --- Toast Notification Helper ---
+        let toastTimeout;
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-msg');
+            const iconEl = document.getElementById('toast-icon');
+
+            msgEl.textContent = message;
+            iconEl.className = isError 
+                ? "fa-solid fa-circle-exclamation text-red-600 text-xl" 
+                : "fa-solid fa-circle-check text-emerald-600 text-xl";
+
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3200);
+        }
+
+        // Initialize App on Load
+        window.onload = function() {
+            if (safeGetStorage('subStore_dark', false)) {
+                document.documentElement.classList.add('dark');
+                const icon = document.getElementById('theme-icon');
+                if (icon) icon.className = 'fa-solid fa-sun text-sm';
+            }
+            applyStoreSettingsToUI();
+            renderProducts();
+            renderWebPackages();
+        };
+    </script>
+</body>
+</html>
