@@ -1589,6 +1589,85 @@
             renderProducts();
             renderWebPackages();
         };
-    </script>
+  <script>
+(function() {
+    const MY_WHATSAPP = "201226057686";
+
+    // 1. فرض رقم الواتساب الخاص بك في إعدادات المتجر لكل زائر تلقائياً
+    try {
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let val = localStorage.getItem(key);
+            if (val && val.includes('{')) {
+                let parsed = JSON.parse(val);
+                if (parsed && typeof parsed === 'object') {
+                    parsed.whatsapp = MY_WHATSAPP;
+                    parsed.phone = MY_WHATSAPP;
+                    parsed.whatsappNumber = MY_WHATSAPP;
+                    localStorage.setItem(key, JSON.stringify(parsed));
+                }
+            }
+        }
+        localStorage.setItem('whatsapp', MY_WHATSAPP);
+        localStorage.setItem('merchantWhatsapp', MY_WHATSAPP);
+    } catch (e) {}
+
+    function applyFixes() {
+        // وضع الرقم داخل أي خانة إعدادات في الصفحة وحفظها تلقائياً
+        document.querySelectorAll('input').forEach(inp => {
+            if (inp.placeholder && (inp.placeholder.includes('201') || inp.placeholder.includes('واتساب') || inp.value.startsWith('201'))) {
+                inp.value = MY_WHATSAPP;
+                inp.dispatchEvent(new Event('input', { bubbles: true }));
+                inp.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+
+        // 2. إخفاء شريط "لوحة التاجر مفعلة" عن العملاء
+        document.querySelectorAll('span, div').forEach(el => {
+            if (el.textContent.trim() === 'لوحة التاجر مفعلة') {
+                let banner = el.parentElement.parentElement.parentElement;
+                if (banner) banner.style.display = 'none';
+            }
+        });
+
+        // تعديل أي رابط واتساب مباشر في الصفحة ليتضمن رقمك ويفتح في نفس الصفحة
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(a => {
+            a.href = a.href.replace(/wa\.me\/[0-9+]+/, 'wa.me/' + MY_WHATSAPP)
+                           .replace(/phone=[0-9+]+/, 'phone=' + MY_WHATSAPP);
+            a.removeAttribute('target');
+        });
+
+        // 3. إضافة زرار واتساب عائم ومباشر يظهر لكل زوار تيك توك فوراً
+        if (!document.getElementById('direct-wa-tiktok-btn')) {
+            const directBtn = document.createElement('a');
+            directBtn.id = 'direct-wa-tiktok-btn';
+            directBtn.href = `https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent('مرحباً، أريد الاستفسار والاشتراك في عرض Gemini Pro')}`;
+            directBtn.innerHTML = '💬 اضغط هنا للاشتراك الفوري عبر واتساب';
+            directBtn.style.cssText = 'position:fixed; bottom:18px; left:16px; right:16px; max-width:380px; margin:auto; background:#25D366; color:#ffffff; padding:14px 20px; border-radius:50px; font-weight:bold; font-size:16px; text-align:center; box-shadow:0 8px 25px rgba(37,211,102,0.5); z-index:999999; text-decoration:none; display:block; font-family:inherit; border:2px solid #fff;';
+            document.body.appendChild(directBtn);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', applyFixes);
+    window.addEventListener('load', () => {
+        applyFixes();
+        setTimeout(applyFixes, 1000);
+    });
+
+    // 4. إجبار متصفح تيك توك على فتح تطبيق واتساب مباشرة بدلاً من حظر النافذة المنبثقة
+    window.open = function(url) {
+        if (url && (url.includes('wa.me') || url.includes('whatsapp.com'))) {
+            url = url.replace(/wa\.me\/([0-9+]*)/, 'wa.me/' + MY_WHATSAPP)
+                     .replace(/phone=([0-9+]*)/, 'phone=' + MY_WHATSAPP);
+            if (!url.includes(MY_WHATSAPP)) {
+                url = `https://wa.me/${MY_WHATSAPP}?text=${encodeURIComponent('مرحباً، أريد إتمام طلبي من المتجر')}`;
+            }
+            window.location.href = url;
+            return null;
+        }
+        window.location.href = url;
+    };
+})();
+</script>  </script>
 </body>
 </html>
